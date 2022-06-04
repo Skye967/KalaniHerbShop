@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-import tkinter
 
 setup(name='backend',
       version='1.0',

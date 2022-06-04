@@ -1,5 +1,5 @@
 asgiref==3.5.1
--e git+https://github.com/Skye967/KalaniHerbShop.git@d858f72769b7d778fc5b134b355913ae2a6987e2#egg=backend
+-e git+https://github.com/Skye967/KalaniHerbShop.git@5849266f57cdfce48173f05c88106f030ab824a8#egg=backend
 boto3==1.24.1
 botocore==1.27.1
 Django==4.0.4
