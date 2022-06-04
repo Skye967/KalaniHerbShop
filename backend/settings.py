@@ -13,14 +13,17 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import imp
 from pathlib import Path
 from xmlrpc.client import FastMarshaller
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
 import os
+from datetime import timedelta
+from pathlib import Path
 
 import environ
 env = environ.Env()
 environ.Env.read_env()
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -29,7 +32,7 @@ environ.Env.read_env()
 SECRET_KEY = 'django-insecure-8)lq=8e@mf*tll^&cqphv=gvpwjd7%j#or3=5cgnd8+8ty83u#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'kalaniherbshop.herokuapp.com']
 
@@ -60,7 +63,6 @@ REST_FRAMEWORK = {
 }
 
 
-from datetime import timedelta
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
@@ -150,7 +152,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'KalaniHerbShop',
         'USER': 'skyonide',
-        'PASSWORD': env('DB_PASS'),
+        'PASSWORD': os.environ.get('DB_PASS'),
         'HOST': 'kalaniherbshop-identifier.cllg6jlgzswn.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
         
@@ -210,8 +212,8 @@ AWS_QUERYSTRING_AUTH = False
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-AWS_S3_ACCESS_KEY_ID = env('AWS_S3_ACCESS_KEY_ID')
-AWS_S3_SECRET_ACCESS_KEY = env('AWS_S3_SECRET_ACCESS_KEY')
+AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_S3_ACCESS_KEY_ID')
+AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_S3_SECRET_ACCESS_KEY')
 
 AWS_STORAGE_BUCKET_NAME = 'kalaniherbshop-bucket'
 AWS_S3_REGION_NAME = 'us-east-2' #change to your region
@@ -219,7 +221,8 @@ AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_ADDRESSING_STYLE = "virtual"
 # AWS_QUERYSTRING_AUTH=False
 
-
+if os.getcwd() == '/app':
+    DEBUG = False
 
 
 # Default primary key field type
@@ -228,5 +231,3 @@ AWS_S3_ADDRESSING_STYLE = "virtual"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-if os.getcwd() == '/app':
-    DEBUG = False
