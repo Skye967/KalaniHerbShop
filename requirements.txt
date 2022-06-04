@@ -1,7 +1,6 @@
 asgiref==3.5.1
 boto3==1.24.1
 botocore==1.27.1
-djanagoEcommerce==1.0
 Django==4.0.4
 django-cors-headers==3.12.0
 django-environ==0.8.1
