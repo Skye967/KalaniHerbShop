@@ -1,3 +1,5 @@
 .env
 /Pipfile
 /bucket-policy.txt
+/setup.py
+/node_modules
