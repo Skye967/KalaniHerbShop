@@ -1,6 +1,5 @@
 
 from http.client import ResponseNotReady
-from tkinter.tix import Tree
 from django.shortcuts import render
 from pickle import FALSE
 
