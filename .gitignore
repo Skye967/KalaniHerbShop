@@ -3,3 +3,4 @@
 /bucket-policy.txt
 /setup.py
 /node_modules
+.DS_STORE
