@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
-import {Button, Form, Row, Col} from 'react-bootstrap'
-import { useNavigate, useLocation } from 'react-router-dom'
+import {Button, Form } from 'react-bootstrap'
+import { useNavigate} from 'react-router-dom'
 
 function SearchBox() {
     const [keyword, setKeyword] = useState('')
 
     let navigation = useNavigate()
-    let location = useLocation()
 
     const submitHandler = (e) => {
         e.preventDefault()

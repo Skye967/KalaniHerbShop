@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Link, useParams, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/Loader'
@@ -9,7 +9,6 @@ import { register } from '../actions/userActions'
 
 
 function RegisterScreen() {
-    let params = useParams()
     let location = useLocation()
     let navigate = useNavigate()
     const dispatch = useDispatch()
@@ -23,7 +22,7 @@ function RegisterScreen() {
     const redirect = location.search ? location.search.split('=')[1] : '/'
 
     const userRegister = useSelector(state => state.userRegister)
-    const {loading, error, userInfo} = userRegister
+    const {loading,userInfo} = userRegister
 
     useEffect(() => {
         if(userInfo){

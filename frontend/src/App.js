@@ -39,9 +39,9 @@ function App() {
             <Route  path='/order/:id/' element={<OrderScreen />} />
             <Route  path='/payment/' element={<PaymentScreen />} />
             <Route  path='/product/:id' element={<ProductScreen/>} />
-            <Route  path='/cart/' element={<CartScreen authed={true} />} >
-              <Route path='/cart/:id' element={<CartScreen authed={true} />}/>
-              <Route path='/cart/:id:qty' element={<CartScreen authed={true} />}/>
+            <Route  path='/cart/' element={<CartScreen />} >
+              <Route path='/cart/:id' element={<CartScreen />}/>
+              <Route path='/cart/:id/:qty' element={<CartScreen />}/>
               <Route />
             </Route>
             <Route  path='/admin/userlist/' element={<UserListScreen authed={true} />} />

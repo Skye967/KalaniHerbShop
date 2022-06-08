@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useParams, useLocation, useNavigate, Link } from 'react-router-dom'
+import { useParams,useNavigate, Link } from 'react-router-dom'
 import { Button, Row, Col, ListGroup, Card, Image } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { PayPalButton } from 'react-paypal-button-v2'
@@ -10,7 +10,6 @@ import { ORDER_PAY_RESET, ORDER_DELIVER_RESET } from '../constants/orderConstant
 
 function OrderScreen() {
     const params = useParams()
-    const location = useLocation()
     const navigate = useNavigate()
     const dispatch = useDispatch()
 

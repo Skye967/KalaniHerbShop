@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Link, useParams, useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Form, Button, Row, Col, Table } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
@@ -10,8 +10,6 @@ import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 import { listMyOrders } from '../actions/orderActions'
 
 function ProfileScreen() {
-    const params = useParams()
-    const location = useLocation()
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -24,7 +22,7 @@ function ProfileScreen() {
 
 
     const userDetails = useSelector(state => state.userDetails)
-    const {loading, error, user} = userDetails
+    const {loading, user} = userDetails
 
     const userLogin = useSelector(state => state.userLogin)
     const {userInfo} = userLogin

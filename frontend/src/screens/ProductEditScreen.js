@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Link, useParams, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
@@ -12,7 +12,6 @@ import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
 
 function ProductEditScreen() {
     let params = useParams()
-    let location = useLocation()
     let navigate = useNavigate()
     const dispatch = useDispatch()
 

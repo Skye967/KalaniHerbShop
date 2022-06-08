@@ -1,5 +1,5 @@
 import React from 'react'
-import { Spinner, spinner } from 'react-bootstrap'
+import { Spinner } from 'react-bootstrap'
 
 function Loader(){
   return (

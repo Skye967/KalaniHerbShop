@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import { useParams, useLocation, useNavigate } from 'react-router-dom'
+import React, {useState } from 'react'
+import {  useNavigate } from 'react-router-dom'
 import { Form, Button, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../components/FormContainer'
@@ -8,8 +8,6 @@ import { savePaymentMethod } from '../actions/cartActions'
 
 
 function PaymentScreen() {
-    let params = useParams()
-    let location = useLocation()
     let navigate = useNavigate()
 
     const cart = useSelector(state => state.cart)

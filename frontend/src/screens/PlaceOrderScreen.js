@@ -1,16 +1,13 @@
-import React, {useState, useEffect} from 'react'
-import { useParams, useLocation, useNavigate, Link } from 'react-router-dom'
+import React, { useEffect} from 'react'
+import { useNavigate, Link } from 'react-router-dom'
 import { Button, Row, Col, ListGroup, Card, Image } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { saveShippingAddress } from '../actions/cartActions'
 import Message from '../components/Message'
 import CheckoutSteps from '../components/CheckoutSteps'
 import { createOrder } from '../actions/orderActions'
 import { ORDER_CREATE_RESET } from '../constants/orderConstants'
 
 function PlaceOrderScreen() {
-    const params = useParams()
-    const location = useLocation()
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
