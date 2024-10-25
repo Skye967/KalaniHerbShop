@@ -16,6 +16,8 @@ jobs:
         name: Amplify Security Scan
         runs-on: ubuntu-latest
         if: (github.actor != 'dependabot[bot]')
+        permissions:
+            id-token: write
         steps:
             - name: Checkout
               uses: actions/checkout@v4
